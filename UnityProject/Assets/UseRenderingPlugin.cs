@@ -190,7 +190,7 @@ public class UseRenderingPlugin : MonoBehaviour
             // Set time for the plugin
             // Unless it is D3D12 whose renderer is allowed to overlap with the next frame update and would cause instabilities due to no synchronization.
             // On Switch, with multithreaded mode, setting the time for frame 1 may overlap with the render thread calling the plugin event for frame 0 resulting in the plugin writing data for frame 1 at frame 0.
-            if (SystemInfo.graphicsDeviceType != GraphicsDeviceType.Direct3D12 && SystemInfo.graphicsDeviceType != GraphicsDeviceType.Switch)
+            //if (SystemInfo.graphicsDeviceType != GraphicsDeviceType.Direct3D12 && SystemInfo.graphicsDeviceType != GraphicsDeviceType.Switch)
             {
                 ++updateTimeCounter;
                 SetTimeFromUnity((float)updateTimeCounter * 0.016f);
